@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
+    <label for="fio">Enter fio</label>
+    <input type="text" th:field="*{name}" id="fio">
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+    <br/>
+
+    <label for="birthdayYear">Enter birthdayYear</label>
+    <input type="text" th:field="*{year}" id="birthdayYear">
+    <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></div>
+    <br/>
+
+<!--    <label for="email">Enter email</label>-->
+<!--    <input type="text" th:field="*{email}" id="email">-->
+<!--    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>-->
+<!--    <br/>-->
+
+<!--    <label for="address">Enter address</label>-->
+<!--    <input type="text" th:field="*{address}" id="address">-->
+<!--    <div style="color:red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>-->
+<!--    <br/>-->
+    <input type="submit"value="Update!">
+</form>
+</body>
+</html>

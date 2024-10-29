@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все люди</title>
+</head>
+<body>
+
+<div th:each="person : ${people}">
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getName()+','+ person.getYear()}">user</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/people/new">Create new person</a>
+
+
+<!--<a href="/test-batch-update" style="color: brown">Go to tests!</a>-->
+</body>
+</html>

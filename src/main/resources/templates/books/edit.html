@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Edit</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/books/{id}(id=${book.getId()})}" th:object="${book}">
+  <label for="title">Enter title</label>
+  <input type="text" th:field="*{title}" id="title">
+  <div style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+  <br/>
+  <label for="author">Enter author</label>
+  <input type="text" th:field="*{author}" id="author">
+  <div style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></div>
+  <br/>
+  <label for="year">Enter birthdayYear</label>
+  <input type="text" th:field="*{year}" id="year">
+  <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></div>
+  <br/>
+
+  <!--    <label for="email">Enter email</label>-->
+  <!--    <input type="text" th:field="*{email}" id="email">-->
+  <!--    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>-->
+  <!--    <br/>-->
+
+  <!--    <label for="address">Enter address</label>-->
+  <!--    <input type="text" th:field="*{address}" id="address">-->
+  <!--    <div style="color:red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>-->
+  <!--    <br/>-->
+  <input type="submit"value="Update!">
+</form>
+</body>
+</html>

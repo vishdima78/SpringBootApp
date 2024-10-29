@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new person</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/people}" th:object="${person}">
+    <label for="person_name">Enter fio</label>
+    <input type="text" th:field="*{name}" id="person_name">
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+    <br/>
+
+    <label for="person_year">Enter birthdayYear</label>
+    <input type="text" th:field="*{year}" id="person_year">
+    <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></div>
+    <br/>
+
+
+
+<!--    <label for="email">Enter email</label>-->
+<!--    <input type="text" th:field="*{email}" id="email">-->
+<!--    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>-->
+<!--    <br/>-->
+
+<!--    <label for="address">Enter address</label>-->
+<!--    <input type="text" th:field="*{address}" id="address">-->
+<!--    <div style="color:red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>-->
+<!--    <br/>-->
+    <input type="submit"value="Create!">
+</form>
+</body>
+</html>
