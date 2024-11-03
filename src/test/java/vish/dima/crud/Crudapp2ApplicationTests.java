@@ -1,4 +1,4 @@
-package vish.dima.crud.CRUDAPP2;
+package vish.dima.crud;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
