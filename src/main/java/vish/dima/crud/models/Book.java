@@ -99,4 +99,9 @@ public class Book {
 
     public Book() {
     }
+
+    public Book(String title, int year) {
+        this.title = title;
+        this.year = year;
+    }
 }
